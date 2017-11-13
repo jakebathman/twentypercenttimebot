@@ -15,9 +15,10 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #C4C9D3;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-size: 18px;
+                //font-weight: 100;
                 height: 100vh;
                 margin: 0;
             }
@@ -52,12 +53,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             }
 
             .title {
-                font-size: 84px;
+                font-size: 60px;
             }
 
+            .links {
+                padding: 12px;
+            }
             .links > a {
                 color: #636b6f;
-                padding: 0 25px;
+                padding: 25px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
@@ -85,10 +89,14 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
             <div class="content">
                 <div class="title m-b-md">
-                    Twenty Percent Time Time
+                   👋 🤖
                 </div>
 
+                <div>
+                Hi! I'm a bot that tracks how long 20 minutes really takes.
+                </div>
                 <div class="links">
+                <a href="https://github.com/jakebathman/twentypercenttimebot">github.com/jakebathman/twentypercenttimebot</a>
                 </div>
             </div>
         </div>
