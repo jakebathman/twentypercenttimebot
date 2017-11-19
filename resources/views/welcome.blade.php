@@ -72,7 +72,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                 margin: auto;
             }
 
-            @media(max-width: 800px){
+            @media(max-width: 900px){
+                .title{
+                    font-size: 66px;
+                }
+            }
+            @media(max-width: 600px){
                 .title{
                     font-size: 44px;
                 }
@@ -105,6 +110,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+
+window.addEventListener('orientationchange', drawChart);
+window.onresize = function(event) {
+    drawChart();
+};
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
