@@ -68,6 +68,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             .m-b-md {
                 margin-bottom: 30px;
             }
+            #chart_div{
+                margin: auto;
+            }
         </style>
     </head>
     <body>
@@ -88,9 +91,84 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                     Twenty Percent Time Time
                 </div>
 
-                <div class="links">
-                </div>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
             </div>
         </div>
     </body>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Release Date', 'Lenght (minutes)', '20 Minutes'],
+            [new Date(1493398800000),17.5,20],
+            [new Date(1493910000000),21.11666667,20],
+            [new Date(1494604800000),24.98333333,20],
+            [new Date(1495187100000),22.16666667,20],
+            [new Date(1496402100000),28.1,20],
+            [new Date(1497027600000),27.7,20],
+            [new Date(1498230000000),37.86666667,20],
+            [new Date(1498827600000),32.93333333,20],
+            [new Date(1500048000000),34.55,20],
+            [new Date(1500649200000),35.53333333,20],
+            [new Date(1501027200000),32.61666667,20],
+            [new Date(1501246800000),35.18333333,20],
+            [new Date(1502118000000),33.73333333,20],
+            [new Date(1502474400000),42.56666667,20],
+            [new Date(1503072000000),38.93333333,20],
+            [new Date(1503666000000),33.25,20],
+            [new Date(1504407600000),38.88333333,20],
+            [new Date(1506110400000),42.01666667,20],
+            [new Date(1507302000000),22.03333333,20],
+            [new Date(1508511600000),39.15,20],
+            [new Date(1509123600000),43.21666667,20],
+            [new Date(1510347600000),45.88333333,20],
+        ]);
+
+
+
+        var options = {
+                backgroundColor: '#EBF4FA',
+          title: '',
+        hAxis: {
+          viewWindow: {
+            min: new Date(1493398800000),
+            max: new Date(1510347600000)
+          },
+          gridlines: {
+            count: -1,
+            units: {
+              days: {format: ['MMM dd']},
+              hours: {format: ['HH:mm', 'ha']},
+            }
+          },
+          minorGridlines: {
+            units: {
+              hours: {format: ['hh:mm:ss a', 'ha']},
+              minutes: {format: ['HH:mm a Z', ':mm']}
+            }
+          }
+        },
+          vAxis: {title: 'Duration (minutes)', minValue: 0, maxValue: 60},
+          legend: 'none',
+          trendlines: { 0: {
+                      type: 'linear',
+              showR2: true,
+        visibleInLegend: true,
+          } 
+          },
+         series: {1: {type: 'line',pointsVisible:false,lineWidth:2,color:'#A65275'}},
+         legend: {position: 'top', textStyle: {color: 'blue', fontSize: 16}}
+
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    
 </html>
