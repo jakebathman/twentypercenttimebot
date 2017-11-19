@@ -74,12 +74,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
             @media(max-width: 900px){
                 .title{
-                    font-size: 66px;
+                    font-size: 50px;
                 }
             }
             @media(max-width: 600px){
                 .title{
-                    font-size: 44px;
+                    font-size: 30px;
                 }
             }
         </style>
@@ -102,7 +102,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                     Twenty Percent Time Time
                 </div>
 
-    <div id="chart_div" style="width: 90%; height: 60vh; max-width:800px; max-height: 400px;"></div>
+    <div id="chart_div" style="width: 90%; height: 60vh; max-width:700px; max-height: 400px;"></div>
             </div>
         </div>
     </body>
