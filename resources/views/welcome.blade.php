@@ -190,21 +190,21 @@
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 								<div class="div-inline pad-sides-15 center">
 									<h1 class="color-red">{{ $avgLength }}</h1>
-									<h4 class="color-red">{{ str_plural('minutes', $avgLength) }}</h4>
+									<h4 class="color-red">{{ str_plural('minute', $avgLength) }}</h4>
 									<h4>Avg Length</h4>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 								<div class="div-inline pad-sides-15 center">
 									<h1 class="color-yellow">{{ $numUnderTwenty }}</h1>
-									<h4 class="color-yellow">{{ str_plural('episodes', $numUnderTwenty) }}</h4>
+									<h4 class="color-yellow">{{ str_plural('episode', $numUnderTwenty) }}</h4>
 									<h4>< 20 min</h4>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 								<div class="div-inline pad-sides-15 center">
 									<h1 class="color-green">{{ $longestLength }}</h1>
-									<h4 class="color-green">{{ str_plural('minutes', $longestLength) }}</h4>
+									<h4 class="color-green">{{ str_plural('minute', $longestLength) }}</h4>
 									<h4>Longest Episode</h4>
 								</div>
 							</div>
