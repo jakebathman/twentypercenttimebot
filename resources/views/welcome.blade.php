@@ -176,40 +176,51 @@
 		</div>
 
 		<div class="bot-panel-height stats center">
-			<div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="div-inline pad-15 center">
-						<h1 class="color-red">{{$avgLength}}</h1>
-						<h4>Avg Length (min)</h4>
+			<div class="container">
+				<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="div-inline pad-15 center">
+								<h1 class="color-red">{{$avgLength}}</h1>
+								<h4>Avg Length (min)</h4>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="div-inline pad-15 center">
+								<h1 class="color-yellow">{{$numUnderTwenty}}</h1>
+								<h4>Episodes
+									<20 min</h4>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="div-inline pad-15 center">
+								<h1 class="color-green">{{$longestLength}}</h1>
+								<h4>Longest Episode (min)</h4>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+							<div class="div-inline pad-15 center">
+								<h1 class="color-blue">{{$hourLongEpisode}}</h1>
+								<h4>First Episode > 1 hour
+									<br />(Estimated)</h4>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="div-inline pad-15 center">
-						<h1 class="color-yellow">{{$numUnderTwenty}}</h1>
-						<h4>Episodes <20 min</h4>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="div-inline pad-15 center">
-						<h1 class="color-green">{{$longestLength}}</h1>
-						<h4>Longest Episode (min)</h4>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-					<div class="div-inline pad-15 center">
-						<h1 class="color-blue">{{$hourLongEpisode}}</h1>
-						<h4>First Episode > 1 hour<br />(Estimated)</h4>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="footer">
-			Made with ♥ by
-			<a href="https://twitter.com/JakeBathman" target="_blank">@JakeBathman</a>
-			<br /> Listen to Twenty Percent Time, a great podcast about Laravel development hosted by
+			Made with ♥ by 
+            <a href="https://twitter.com/JakeBathman" target="_blank">@JakeBathman</a>
+            <br />
+            Code for this site is <a href="https://github.com/jakebathman/twentypercenttimebot" target="_blank">on <img src="/img/GitHub-Mark-Light-64px.png" width="16"> GitHub</a>
+			<br /> 
+            Listen to Twenty Percent Time, a great podcast about Laravel development hosted by
 			<a href="https://twitter.com/calebporzio" target="_blank">Caleb</a> &
-			<a href="https://twitter.com/DCoulbourne" target="_blank">Daniel</a>
+			<a href="https://twitter.com/DCoulbourne" target="_blank">Daniel</a>, at <a href="http://twentypercent.fm/" target="_blank">twentypercent.fm</a>
 		</div>
 	</body>
 
