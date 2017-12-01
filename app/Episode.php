@@ -2,27 +2,35 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 
 class Episode extends Model
 {
-  use \Venturecraft\Revisionable\RevisionableTrait;
-  protected $revisionCreationsEnabled = true;
-  
-  protected $guarded = [];
+    use \Venturecraft\Revisionable\RevisionableTrait;
+    protected $revisionCreationsEnabled = true;
 
-  public function setDurationAttribute($value) {
-    $this->attributes['duration'] = str_pad($value,8,'00:00:00',STR_PAD_LEFT);
-  }
+    protected $guarded = [];
 
-  public function setPubDateAttribute($value) {
-    $this->attributes['pubDate'] = Carbon::parse($value)->format('Y-m-d H:i:s');
-  }
+    public function setDurationAttribute($value)
+    {
+        $this->attributes['duration'] = str_pad($value, 8, '00:00:00', STR_PAD_LEFT);
+    }
 
-  public static function boot()
-  {
-    parent::boot();
-  }
+    public function setPubDateAttribute($value)
+    {
+        $this->attributes['pubDate'] = Carbon::parse($value)->format('Y-m-d H:i:s');
+    }
+
+    public function getDurationMinutes()
+    {
+        $duration  = Carbon::parse($this->duration);
+        return ($duration->hour * 60) + $duration->minute + ($duration->second / 60);
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+    }
 
 }
