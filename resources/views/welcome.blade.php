@@ -190,7 +190,7 @@
 							<div class="div-inline pad-15 center">
 								<h1 class="color-yellow">{{$numUnderTwenty}}</h1>
 								<h4>Episodes
-									<20 min</h4>
+									< 20 min</h4>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
