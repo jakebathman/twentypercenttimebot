@@ -24,7 +24,7 @@ class Episode extends Model
 
     public function getDurationMinutes()
     {
-        $duration  = Carbon::parse($this->duration);
+        $duration = Carbon::parse($this->duration);
         return ($duration->hour * 60) + $duration->minute + ($duration->second / 60);
     }
 
