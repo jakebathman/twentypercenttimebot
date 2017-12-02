@@ -214,9 +214,9 @@
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 								<div class="div-inline pad-sides-15 center">
-									<h1 class="color-blue">{{ $hourLongEpisode }}</h1>
+									<h1 class="color-blue">{{ $milestoneEpisode }}</h1>
 									<h4 class="color-blue">Episode #</h4>
-									<h4>First > 1 Hour
+									<h4>First > {{ $milestone }} Minute
 										<br />(estimated)</h4>
 								</div>
 							</div>
