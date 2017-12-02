@@ -19,13 +19,12 @@
 		<style>
 			html,
 			body {
-				background-color: #fff;
 				color: #636b6f;
 				font-family: 'Raleway', sans-serif;
 				font-family: 'VT323', monospace;
 				font-weight: 100;
-				height: 100vh;
 				margin: 0;
+				height: 100%;
 			}
 
 			.flex-center {
@@ -154,14 +153,18 @@
 			}
 
 			.footer {
-				position: absolute;
-				right: 0;
+				position: relative;
 				bottom: 0;
-				left: 0;
-				padding: 1rem;
+				width: 100%;
+				padding: 50px 15px 25px;
 				text-align: center;
 				color: #AAAAAA;
 				line-height: 1.25em;
+			}
+
+			#chart_div {
+				padding-top: 15px;
+				margin: auto;
 			}
 		</style>
 	</head>
@@ -177,8 +180,8 @@
 			</div>
 		</div>
 		<div class="mid-panel-height">
-			<div id="chart_div" style="width: 100%; max-width:700px; padding-top: 15px; ">
-				<div class="ct-chart ct-golden-section"></div>
+			<div id="chart_div" class="center">
+				<div id="chart" class="ct-chart ct-golden-section"></div>
 			</div>
 		</div>
 
@@ -198,7 +201,8 @@
 								<div class="div-inline pad-sides-15 center">
 									<h1 class="color-yellow">{{ $numUnderTwenty }}</h1>
 									<h4 class="color-yellow">{{ str_plural('episode', $numUnderTwenty) }}</h4>
-									<h4>< 20 min</h4>
+									<h4>
+										< 20 min</h4>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -212,7 +216,8 @@
 								<div class="div-inline pad-sides-15 center">
 									<h1 class="color-blue">{{ $hourLongEpisode }}</h1>
 									<h4 class="color-blue">Episode #</h4>
-									<h4>First > 1 Hour<br />(estimated)</h4>
+									<h4>First > 1 Hour
+										<br />(estimated)</h4>
 								</div>
 							</div>
 						</div>
@@ -239,6 +244,25 @@
 	<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
 	<script>
+		(function() {
+            // When the DOM is loaded, render the chart
+            renderChart();
+        })();
+
+        window.addEventListener('resize', function(){
+            // If the window size changes (mostly to catch mobile phone rotation)
+            // let's re-render the chart
+            console.log('rendering again!');
+            document.getElementById('chart').innerHTML = "";
+            renderChart();
+        }, true);
+
+		function renderChart(){
+            var w = document.documentElement.clientWidth;
+            var h = document.documentElement.clientHeight;
+
+                document.getElementById('chart_div').setAttribute("style", "max-width: "+Math.min(w,h)+"px;");
+
 		// Our labels and three data series
         var data = {
             series: [
@@ -282,6 +306,7 @@
 
         // All you need to do is pass your configuration as third parameter to the chart function
         new Chartist.Line('.ct-chart', data, options);
+    }
 	</script>
 
 
