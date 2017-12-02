@@ -227,11 +227,10 @@
 		</div>
 
 		<div class="footer">
-			Made with ♥ by
+			Made with <span class="color-red">♥</span> by
 			<a href="https://twitter.com/JakeBathman" target="_blank">@JakeBathman</a>
 			<br /> Code for this site is
-			<a href="https://github.com/jakebathman/twentypercenttimebot" target="_blank">on
-				<img src="/img/GitHub-Mark-Light-64px.png" width="16"> GitHub</a>
+			<a href="https://github.com/jakebathman/twentypercenttimebot" target="_blank">on GitHub</a>
 			<br /> Listen to Twenty Percent Time, a great podcast about Laravel development hosted by
 			<a href="https://twitter.com/calebporzio" target="_blank">Caleb</a> &
 			<a href="https://twitter.com/DCoulbourne" target="_blank">Daniel</a>, at
