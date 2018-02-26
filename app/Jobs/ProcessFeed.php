@@ -37,7 +37,7 @@ class ProcessFeed implements ShouldQueue
       \Log::info('Updating podcast feed');
 
       // Get the podcast feed
-      $rss = Curl::to($this->feedUrl)->withOption('USERAGENT', "TwentyPercentTimeBot/1.0 (+https://www.twentypercentti.me/bot)")->get();
+      $rss = Curl::to($this->feedUrl)->withOption('USERAGENT', "TwentyPercentTimeBot/1.0 (+https://www.twentypercentti.me/bot)")->allowRedirect()->get();
         
       // Pull the info & duration for each episode and log to the database
       try{
@@ -51,6 +51,7 @@ class ProcessFeed implements ShouldQueue
       catch(\Throwable $e){
         \Log::error('Failed to parse XML');
         \Log::error($e->getMessage());
+        \Log::info($rss);
         return false;
       }
 
