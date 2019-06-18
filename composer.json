@@ -6,7 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "fideloper/proxy": "~3.3",
+        "fideloper/proxy": "~4.1",
         "ixudra/curl": "^6.15",
         "jpgraph/jpgraph": "^4.0",
         "laravel/framework": "5.5.*",
