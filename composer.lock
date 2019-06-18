@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "dd549fc8b15a231dc773f6cea03db409",
@@ -318,16 +318,16 @@
         },
         {
             "name": "ixudra/curl",
-            "version": "6.15.1",
+            "version": "6.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ixudra/curl.git",
-                "reference": "9aba4d3341cb972e3379c6083df375f27a5b9616"
+                "reference": "1ab270e48082ee6e7f32fa72412c2c81eb974516"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ixudra/curl/zipball/9aba4d3341cb972e3379c6083df375f27a5b9616",
-                "reference": "9aba4d3341cb972e3379c6083df375f27a5b9616",
+                "url": "https://api.github.com/repos/ixudra/curl/zipball/1ab270e48082ee6e7f32fa72412c2c81eb974516",
+                "reference": "1ab270e48082ee6e7f32fa72412c2c81eb974516",
                 "shasum": ""
             },
             "require": {
@@ -367,7 +367,7 @@
                 "curl",
                 "laravel"
             ],
-            "time": "2017-11-07T13:28:52+00:00"
+            "time": "2017-12-08T14:31:13+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3482,6 +3482,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2017-08-03T14:08:16+00:00"
         },
         {
