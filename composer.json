@@ -12,7 +12,7 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "orchestra/parser": "^3.5",
-        "pda/pheanstalk": "~3.0",
+        "pda/pheanstalk": "~4.0",
         "venturecraft/revisionable": "^1.28"
     },
     "require-dev": {
