@@ -21,13 +21,13 @@ class CreateEpisodesTable extends Migration
             $table->string('guid')->nullable()->unique();
             $table->dateTime('pubDate')->nullable();
             $table->string('author')->nullable();
-            $table->string('subtitle')->nullable();
+            $table->text('subtitle')->nullable();
             $table->string('url')->nullable();
             $table->string('file_type')->nullable();
             $table->string('file_url')->nullable();
             $table->unsignedInteger('length_bytes')->nullable();
             $table->time('duration')->nullable();
-            $table->text('description')->nullable();
+            $table->longText('description')->nullable();
         });
     }
 

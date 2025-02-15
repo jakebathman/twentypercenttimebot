@@ -10,12 +10,13 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use XmlParser;
 use Ixudra\Curl\Facades\Curl;
 use App\Episode;
+use Illuminate\Support\Carbon;
 
 class ProcessFeed implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $feedUrl = 'http://twentypercent.fm/rss';
+    protected $feedUrl = 'https://feeds.simplecast.com/2__oe3vS';
 
     /**
      * Create a new job instance.
@@ -58,15 +59,16 @@ class ProcessFeed implements ShouldQueue
       // Merge the two arrays (since the normal and itunes: items were parsed separately)
       foreach($tmpEpisodes['items'] as $key => $episode){
         $episodeInfo = array_merge($episode,$tmpEpisodes['itunes'][$key]);
-        //\Log::info($episodeInfo);
-        
+
+        $date = Carbon::parse($episodeInfo['pubDate']);
+        if ($date->isAfter(Carbon::parse('2019-02-01'))) {
+            // After the initial TPT run, skip
+            continue;
+        }
+    
         $e = Episode::firstOrNew(['guid' => $episodeInfo['guid']]);
         $e->fill($episodeInfo);
-        
-        if($e->isDirty(['duration'])){
-          \Log::info("So dirty");
-        }
-        
+                
         $e->save();
       }
       \Log::info('Done!');
